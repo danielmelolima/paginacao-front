@@ -1,0 +1,21 @@
+<table class="table table-bordered">
+  <thead >
+    <tr class="thead-primary">
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; let i = index;">
+      <td>{{ i + 1}}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price | currency: "BRL": true }}</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<pagination [page]="page" (paginationEvent)=changePage($event)></pagination>
